@@ -38,4 +38,6 @@ const abbreviate = (string) => {
 //     : element))
 //   .join(''));
 
+// const abbreviate = string => string.replace(/\B\w{2,}\B/g, match => match.length);
+
 module.exports = abbreviate;
