@@ -34,7 +34,7 @@ describe('Abbreviate kata', () => {
       done();
     });
     it('should return processed words separated by dash', (done) => {
-      assert.equal(abbreviate('send--letter hello+world!'), 's2d--l4r h3o+w3d!');
+      assert.equal(abbreviate('Send--letter hello+world!'), 'S2d--l4r h3o+w3d!');
       done();
     });
     it('should return processed words separated by dash and ends with "?"', (done) => {
@@ -43,6 +43,10 @@ describe('Abbreviate kata', () => {
     });
     it('all non-word character remain in place', (done) => {
       assert.equal(abbreviate('elephant-rides are really fun!'), 'e6t-r3s are r4y fun!');
+      done();
+    });
+    it('all non-word character remain in place', (done) => {
+      assert.equal(abbreviate('*** elephant--rides are really+fun!'), '*** e6t--r3s are r4y+fun!');
       done();
     });
   });
