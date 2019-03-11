@@ -1,7 +1,7 @@
 {
   "name": "temp",
   "version": "1.0.0",
-  "description": "",
+  "description": "codewars per for traning kata",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -9,6 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {},
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^5.15.0",
