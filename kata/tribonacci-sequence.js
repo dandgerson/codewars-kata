@@ -21,27 +21,27 @@ const tribonacci = (signature, n) => {
   return result;
 };
 
-function fibRec(n) {
-  if (n <= 2) return 1;
-  return fibRec(n - 1) + fibRec(n - 2);
-}
+// function fibRec(n) {
+//   if (n <= 2) return 1;
+//   return fibRec(n - 1) + fibRec(n - 2);
+// }
 
-function fib(n) {
-  if (n <= 2) return 1;
+// function fib(n) {
+//   if (n <= 2) return 1;
 
-  let a = 0;
-  let b = 1;
-  let c;
-  let i = n;
+//   let a = 0;
+//   let b = 1;
+//   let c;
+//   let i = n;
 
-  while (i > 2) {
-    c = a + b;
-    a = b;
-    b = c;
-    i -= 1;
-  }
+//   while (i > 2) {
+//     c = a + b;
+//     a = b;
+//     b = c;
+//     i -= 1;
+//   }
 
-  return b;
-}
+//   return b;
+// }
 
 module.exports = tribonacci;
