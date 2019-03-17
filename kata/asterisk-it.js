@@ -40,7 +40,7 @@ const asteriscIt = (n) => {
 
   for (let i = 0; i < absString.length; i += 1) {
     resultString += absString[i];
-    if (absString[i] % 2 === 0) resultString += '*';
+    if (absString[i] % 2 === 0 && absString[i + 1] % 2 === 0) resultString += '*';
   }
 
   if (rawString[0] === '-') resultString = `-${resultString}`;
