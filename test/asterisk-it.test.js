@@ -29,11 +29,19 @@ describe('Asterisk It', () => {
       done();
     });
     it('should parse assume of the template', (done) => {
+      assert.equal(asteriscIt([-1, 4, 64, 68, 67, 23, 1]), '-14*6*4*6*8*67231');
+      done();
+    });
+    it('should parse assume of the template', (done) => {
       assert.equal(asteriscIt(5312708), '531270*8');
       done();
     });
     it('should parse assume of the template', (done) => {
       assert.equal(asteriscIt(9682135), '96*8*2135');
+      done();
+    });
+    it('should parse assume of the template', (done) => {
+      assert.equal(asteriscIt(-9682135), '-96*8*2135');
       done();
     });
   });

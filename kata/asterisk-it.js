@@ -1,5 +1,5 @@
 const asteriscItArray = (n) => {
-  const rawString = (`${n}`);
+  const rawString = `${n}`;
   let resultString = '';
 
   if (Array.isArray(n)) {
@@ -15,16 +15,14 @@ const asteriscItArray = (n) => {
 
     if (n[0] < 0) resultString = `-${resultString}`;
   } else {
-    let absString = rawString;
-
-    if (n < 0) absString = rawString.slice(1);
+    const absString = rawString[0] === '-' ? rawString.slice(1) : rawString;
 
     for (let i = 0; i < absString.length; i += 1) {
       resultString += absString[i];
       if (absString[i] % 2 === 0) resultString += '*';
     }
 
-    if (n < 0) resultString = `-${resultString}`;
+    if (rawString[0] === '-') resultString = `-${resultString}`;
   }
 
   if (resultString[resultString.length - 1] === '*') resultString = resultString.slice(0, resultString.length - 1);
@@ -33,26 +31,23 @@ const asteriscItArray = (n) => {
 };
 
 const asteriscIt = (n) => {
-  let rawString = (`${n}`);
+  let rawString = `${n}`;
   let resultString = '';
 
-  if (Array.isArray(n)) {
-    rawString = rawString.replace(/,/g, '');
-  }
-  let absString = rawString;
+  if (Array.isArray(n)) rawString = rawString.replace(/,/g, '');
 
-  if (n < 0) absString = rawString.slice(1);
+  const absString = rawString[0] === '-' ? rawString.slice(1) : rawString;
 
   for (let i = 0; i < absString.length; i += 1) {
     resultString += absString[i];
     if (absString[i] % 2 === 0) resultString += '*';
   }
 
-  if (n < 0) resultString = `-${resultString}`;
+  if (rawString[0] === '-') resultString = `-${resultString}`;
 
   if (resultString[resultString.length - 1] === '*') resultString = resultString.slice(0, resultString.length - 1);
 
   return resultString;
 };
 
-module.exports = asteriscItArray;
+module.exports = asteriscIt;
