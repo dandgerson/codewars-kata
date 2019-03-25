@@ -1,4 +1,4 @@
-const smallest = (n) => {
+const smaller = (n) => {
   console.log(n);
   const digits = `${n}`.split('').map(value => +value);
   let least = digits.lastIndexOf(Math.min(...digits.slice(1)));
@@ -13,7 +13,8 @@ const smallest = (n) => {
     } else insert = 1;
   }
 
-  if (digits[0] === Math.max(...digits) && (digits[least] !== 0 || digits[least] === 0 && least === 1)) {
+  if ((digits[0] === Math.max(...digits) && (digits[least] !== 0)
+      || (digits[least] === 0 && least === 1))) {
     console.log('Greater first');
     least = 0;
     insert = digits.lastIndexOf(Math.min(...digits));
@@ -40,6 +41,24 @@ const smallest = (n) => {
   //   }
   digits.splice(insert, 0, digits.splice(least, 1)[0]);
   return [+(digits.join('')), least, insert];
+};
+
+const smallest = (n) => {
+  const digits = `${n}`.split('').map(value => +value);
+  const set = [];
+  const setOfResults = [];
+  for (let i = 0; i < digits.length; i += 1) {
+    for (let j = 0; j < digits.length; j += 1) {
+      const digitsClone = digits.slice();
+      digitsClone.splice(i, 0, digitsClone.splice(j, 1)[0]);
+      const number = +(digitsClone.join(''));
+      set.push(number);
+      if (i === 0 && j === 1) {
+        setOfResults.push([number, i, j]);
+      } else setOfResults.push([number, j, i]);
+    }
+  }
+  return setOfResults.find(value => value[0] === Math.min(...set));
 };
 
 module.exports = smallest;
