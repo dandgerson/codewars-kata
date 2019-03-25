@@ -32,5 +32,13 @@ describe('Find the Smallest', () => {
       assert.deepEqual(smallest(296837), [239687, 4, 1]);
       done();
     });
+    it('should returns expected value', (done) => {
+      assert.deepEqual(smallest(187863002809), [18786300289, 10, 0]);
+      done();
+    });
+    it('should returns expected value', (done) => {
+      assert.deepEqual(smallest(935855753), [358557539, 0, 8]);
+      done();
+    });
   });
 });
