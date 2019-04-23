@@ -12,13 +12,23 @@ describe('removeChars', () => {
     assert.isNull(removeChars(input));
     done();
   });
-  it('should returns null if input is not contain colon separated', (done) => {
+  it('should returns null if input don\'t contains colon separated', (done) => {
     const input = '1';
     assert.isNull(removeChars(input));
     done();
   });
-  it('should returns null if input is contain spaces', (done) => {
+  it('should returns null if input contains spaces', (done) => {
     const input = '1, 2';
+    assert.isNull(removeChars(input));
+    done();
+  });
+  it('should returns null if input contains spaces', (done) => {
+    const input = '1, 2';
+    assert.isNull(removeChars(input));
+    done();
+  });
+  it('should returns null if input contains less than three intries', (done) => {
+    const input = '1,2';
     assert.isNull(removeChars(input));
     done();
   });
