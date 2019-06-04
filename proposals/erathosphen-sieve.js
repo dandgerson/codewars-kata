@@ -9,7 +9,7 @@ const sieve = (n) => {
     for (let i = p ** 2; i <= n; i += p) {
       numbers[i] = false;
     }
-    const old = p;
+    const prev = p;
     for (let i = p + 1; i <= n; i += 1) {
       if (numbers[i] && i > p) {
         p = i;
@@ -17,7 +17,7 @@ const sieve = (n) => {
         break;
       }
     }
-    if (old === p) break;
+    if (prev === p) break;
   }
 
   return primes;
