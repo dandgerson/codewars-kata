@@ -26,18 +26,18 @@ const getPerfect = (n) => {
         return 'have some shame =)';
     }
   }
-  const result = [];
+  const perfects = [];
   for (let i = 0; i < n; i += 1) {
-    for (let number = 2; result.length !== n; number += 1) {
+    for (let number = 2; perfects.length !== n; number += 1) {
       const dividers = [];
       for (let divider = 1; divider <= number / 2; divider += 1) {
         if (number % divider === 0) dividers.push(divider);
       }
       const sum = dividers.reduce((acc, current) => acc + current, 0);
-      if (sum === number && number !== result[i - 1]) result.push(number);
+      if (sum === number && number !== perfects[i - 1]) perfects.push(number);
     }
   }
-  return result;
+  return perfects;
 };
 
 module.exports = getPerfect;
