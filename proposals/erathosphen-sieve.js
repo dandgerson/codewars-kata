@@ -1,7 +1,7 @@
 const sieve = (n) => {
   const numbers = Array.from(
     { length: n + 1 },
-    v => true,
+    () => true,
   );
   const primes = [2];
   let p = 2;
