@@ -26,6 +26,7 @@ const getPerfect = (n) => {
         return 'have some shame =)';
     }
   }
+  // need refactoring with primes and erathosphen sieve func
   const perfects = [];
   for (let i = 0; i < n; i += 1) {
     for (let number = 2; perfects.length !== n; number += 1) {
